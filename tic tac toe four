@@ -1,0 +1,162 @@
+Row1 = ["c", "c", "c"]
+Row2 = ["c", "c", "c"]
+Row3 = ["c", "c", "c"]
+wins = 0
+winner ="nobody"
+this = 1
+turn = 1
+while wins == 0:
+    while this == 1:
+        row = int(input('Enter the row; '))
+        column = int(input('Enter the column: '))
+        if row == 1:
+            if column == 1:
+                if turn == 1:
+                    Row1[0] = "x"
+                if turn == 2:
+                    Row1[0] = "o"
+            if column == 2:
+                if turn == 1:
+                    Row1[1] = "x"
+                if turn == 2:
+                    Row1[1] = "o"
+            if column == 3:
+                if turn == 1:
+                    Row1[2] = "x"
+                if turn == 2:
+                    Row1[2] = "o"
+        if row == 2:
+            if column == 1:
+                if turn == 1:
+                    Row2[0] = "x"
+                if turn == 2:
+                    Row2[0] = "o"
+            if column == 2:
+                if turn == 1:
+                    Row2[1] = "x"
+                if turn == 2:
+                    Row2[1] = "o"
+            if column == 3:
+                if turn == 1:
+                    Row2[2] = "x"
+                if turn == 2:
+                    Row2[2] = "o"
+        if row == 3:
+            if column == 1:
+                if turn == 1:
+                    Row3[0] = "x"
+                if turn == 2:
+                    Row3[0] = "o"
+            if column == 2:
+                if turn == 1:
+                    Row3[1] = "x"
+                if turn == 2:
+                    Row3[1] = "o"
+            if column == 3:
+                if turn == 1:
+                    Row3[2] = "x"
+                if turn == 2:
+                    Row3[2] = "o"
+        if turn == 1:
+            turn = 2
+        elif turn == 2:
+            turn = 1
+        print(Row1)
+        print(Row2)
+        print(Row3)
+        if Row1[0] == "x":
+            if Row1[1] == "x":
+                if Row1[2] == "x":
+                    wins += 1
+                    winner = "x"
+        if Row1[0] == "x":
+            if Row2[0] == "x":
+                if Row3[0] == "x":
+                    wins += 1
+                    winner = "x"
+        if Row1[0] == "x":
+            if Row2[1] == "x":
+                if Row3[2] == "x":
+                    wins += 1
+                    winner = "x"
+        if Row1[1] == "x":
+            if Row2[1] == "x":
+                if Row3[1] == "x":
+                    wins += 1
+                    winner = "x"
+        if Row1[2] == "x":
+            if Row2[2] == "x":
+                if Row3[2] == "x":
+                    wins += 1
+                    winner = "x"
+        if Row1[2] == "x":
+            if Row2[1] == "x":
+                if Row3[0] == "x":
+                    wins += 1
+                    winner = "x"
+        if Row2[0] == "x":
+            if Row2[1] == "x":
+                if Row2[2] == "x":
+                    wins += 1
+                    winner = "x"
+        if Row3[0] == "x":
+            if Row3[1] == "x":
+                if Row3[2] == "x":
+                    wins += 1
+                    winner = "x"
+        if Row1[0] == "o":
+            if Row1[1] == "o":
+                if Row1[2] == "o":
+                    wins += 1
+                    winner = "o"
+        if Row1[0] == "o":
+            if Row2[0] == "o":
+                if Row3[0] == "o":
+                    wins += 1
+                    winner = "o"
+        if Row1[0] == "o":
+            if Row2[1] == "o":
+                if Row3[2] == "o":
+                    wins += 1
+                    winner = "o"
+        if Row1[1] == "o":
+            if Row2[1] == "o":
+                if Row3[1] == "o":
+                    wins += 1
+                    winner = "o"
+        if Row1[2] == "o":
+            if Row2[2] == "o":
+                if Row3[2] == "o":
+                    wins += 1
+                    winner = "o"
+        if Row1[2] == "o":
+            if Row2[1] == "o":
+                if Row3[0] == "o":
+                    wins += 1
+                    winner = "o"
+        if Row2[0] == "o":
+            if Row2[1] == "o":
+                if Row2[2] == "o":
+                    wins += 1
+                    winner = "o"
+        if Row3[0] == "o":
+            if Row3[1] == "o":
+                if Row3[2] == "o":
+                    wins += 1
+                    winner = "o"
+        if winner == "x":
+            print("x wins!")
+        if winner == "o":
+            print("o wins!")
+        if Row1[0] != "c":
+            if Row1[1] != "c":
+                if Row1[2] != "c":
+                    if Row2[0] != "c":
+                        if Row2[1] != "c":
+                            if Row2[2] != "c":
+                                if Row3[0] != "c":
+                                    if Row3[1] != "c":
+                                        if Row3[2] != "c":
+                                            if wins != 1:
+                                                print("it's a tie!")
+                                                this += 1
