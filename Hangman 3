@@ -1,0 +1,91 @@
+#word choices
+number = int(input('Enter a number between 1 and 10: '))
+if number == 1:
+    myword = 'problem'
+elif number == 2:
+    myword = 'word'
+elif number == 3:
+    myword = 'hey'
+elif number == 4:
+    myword = 'solve'
+elif number == 5:
+    myword = 'helping'
+elif number == 6:
+    myword = 'hangmen'
+elif number == 7:
+    myword = 'history'
+elif number == 8:
+    myword = 'math'
+elif number == 9:
+    myword = 'computer'
+elif number == 10:
+    myword = 'program'
+values = len(myword)
+chances = 10
+score = 0 
+scorecheck = 0
+print('Here is how to play the game: You have 10 chances to guess the word.')
+while chances > 0 and score < len(myword):
+    if number == 1:
+        myword = 'problem'
+    elif number == 2:
+     myword = 'word'
+    elif number == 3:
+        myword = 'hey'
+    elif number == 4:
+        myword = 'solve'
+    elif number == 5:
+        myword = 'helping'
+    elif number == 6:
+        myword = 'hangmen'
+    elif number == 7:
+        myword = 'history'
+    elif number == 8:
+        myword = 'math'
+    elif number == 9:
+        myword = 'computer'
+    elif number == 10:
+        myword = 'program'
+    values = len(myword)
+    testword = myword[values-1]
+    letter = input('Guess a letter: ')
+    while values > 0:
+        if letter == testword:
+            print('You got a letter!')
+            print(testword)
+            score += 1
+        elif letter != testword:
+            print('This is not a letter in the word.')
+        myword = myword[:-1]
+        values = len(myword)
+        if values != 0:
+            testword = myword[values-1]
+    scorecheck += 1
+    if score != scorecheck:
+        print('This is not a letter in the word. ')
+        chances -= 1
+    if number == 1:
+        myword = 'problem'
+    elif number == 2:
+     myword = 'word'
+    elif number == 3:
+        myword = 'hey'
+    elif number == 4:
+        myword = 'solve'
+    elif number == 5:
+        myword = 'helping'
+    elif number == 6:
+        myword = 'hangmen'
+    elif number == 7:
+        myword = 'history'
+    elif number == 8:
+        myword = 'math'
+    elif number == 9:
+        myword = 'computer'
+    elif number == 10:
+        myword = 'program'
+if chances == 0:
+    print('The man is hung!')
+elif score == len(myword):
+    print('You won! The word is:')
+    print( myword )
