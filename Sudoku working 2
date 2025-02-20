@@ -1,0 +1,328 @@
+import numpy as np
+puzzle = int(input('Enter a number between 1 and 3: '))
+if puzzle == 1:
+    solutionrow1 = np.array([8, 9, 7,  6, 4, 2,  3, 1, 5])
+    solutionrow2 = np.array([5, 1, 4,  3, 9, 7,  6, 8, 2])
+    solutionrow3 = np.array([3, 6, 2,  5, 1, 8,  4, 7, 9])
+    solutionrow4 = np.array([6, 2, 9,  8, 7, 1,  5, 4, 3])
+    solutionrow5 = np.array([7, 3, 5,  4, 6, 9,  8, 2, 1])
+    solutionrow6 = np.array([4, 8, 1,  2, 5, 3,  9, 6, 7])
+    solutionrow7 = np.array([9, 4, 6,  1, 2, 5,  7, 3, 8])
+    solutionrow8 = np.array([2, 7, 3,  9, 8, 4,  1, 5, 6])
+    solutionrow9 = np.array([1, 5, 8,  7, 3, 6,  2, 9, 4])
+    doingrow1 = np.array([0, 0, 7,  0, 0, 0,  0, 1, 5])
+    doingrow2 = np.array([0, 0, 0,  3, 9, 7,  0, 0, 0])
+    doingrow3 = np.array([0, 6, 2,  0, 1, 0,  4, 0, 9])
+    doingrow4 = np.array([0, 2, 0,  0, 0, 1,  5, 4, 3])
+    doingrow5 = np.array([7, 0, 0,  4, 0, 9,  0, 0, 1])
+    doingrow6 = np.array([4, 8, 1,  2, 0, 0,  0, 6, 7])
+    doingrow7 = np.array([9, 0, 6,  0, 2, 0,  7, 3, 0])
+    doingrow8 = np.array([0, 0, 0,  9, 8, 4,  0, 0, 0])
+    doingrow9 = np.array([1, 5, 0,  0, 0, 0,  2, 0, 0])
+elif puzzle == 2:
+    solutionrow1 = np.array([9, 7, 1,  5, 3, 8,  4, 6, 2])
+    solutionrow2 = np.array([6, 5, 3,  9, 4, 2,  7, 1, 8])
+    solutionrow3 = np.array([4, 8, 2,  7, 1, 6,  5, 9, 3])
+    solutionrow4 = np.array([3, 2, 4,  6, 5, 1,  8, 7, 9])
+    solutionrow5 = np.array([8, 1, 7,  2, 9, 4,  6, 3, 5])
+    solutionrow6 = np.array([5, 6, 9,  3, 8, 7,  2, 4, 1])
+    solutionrow7 = np.array([1, 9, 6,  8, 7, 5,  3, 2, 4])
+    solutionrow8 = np.array([7, 4, 5,  1, 2, 3,  9, 8, 6])
+    solutionrow9 = np.array([2, 3, 8,  4, 6, 9,  1, 5, 7])
+    doingrow1 = np.array([0, 0, 1,  5, 3, 0,  0, 0, 0])
+    doingrow2 = np.array([6, 0, 0,  0, 0, 0,  7, 1, 8])
+    doingrow3 = np.array([0, 8, 2,  7, 0, 0,  0, 9, 0])
+    doingrow4 = np.array([3, 0, 4,  0, 5, 1,  0, 0, 9])
+    doingrow5 = np.array([0, 0, 7,  2, 0, 4,  6, 0, 0])
+    doingrow6 = np.array([5, 0, 0,  3, 8, 0,  2, 0, 1])
+    doingrow7 = np.array([0, 9, 0,  0, 0, 5,  3, 2, 0])
+    doingrow8 = np.array([7, 4, 5,  0, 0, 0,  0, 0, 6])
+    doingrow9 = np.array([0, 0, 0,  0, 6, 9,  1, 0, 0])
+elif puzzle == 3:
+    solutionrow1 = np.array([2, 5, 3,  4, 6, 9,  8, 7, 1])
+    solutionrow2 = np.array([7, 9, 4,  3, 1, 8,  6, 5, 2])
+    solutionrow3 = np.array([8, 1, 6,  5, 2, 7,  9, 3, 4])
+    solutionrow4 = np.array([6, 3, 5,  7, 8, 2,  1, 4, 9])
+    solutionrow5 = np.array([9, 2, 7,  6, 4, 1,  5, 8, 3])
+    solutionrow6 = np.array([4, 8, 1,  9, 5, 3,  2, 6, 7])
+    solutionrow7 = np.array([3, 7, 8,  2, 9, 5,  4, 1, 6])
+    solutionrow8 = np.array([5, 4, 2,  1, 7, 6,  3, 9, 8])
+    solutionrow9 = np.array([1, 6, 9,  8, 3, 5,  7, 2, 5])
+    doingrow1 = np.array([2, 5, 0,  0, 0, 0,  8, 0, 0])
+    doingrow2 = np.array([0, 0, 0,  3, 1, 8,  0, 0, 0])
+    doingrow3 = np.array([0, 1, 6,  0, 2, 0,  9, 0, 4])
+    doingrow4 = np.array([6, 3, 5,  0, 0, 2,  0, 0, 9])
+    doingrow5 = np.array([0, 2, 0,  6, 0, 1,  0, 8, 0])
+    doingrow6 = np.array([4, 0, 0,  9, 0, 0,  2, 6, 7])
+    doingrow7 = np.array([3, 0, 8,  0, 9, 0,  4, 1, 0])
+    doingrow8 = np.array([0, 0, 0,  1, 7, 6,  0, 0, 0])
+    doingrow9 = np.array([0, 0, 9,  0, 0, 0,  0, 2, 5])
+wins = 0
+while wins == 0:
+    print(doingrow1)
+    print(doingrow2)
+    print(doingrow3)
+    print(doingrow4)
+    print(doingrow5)
+    print(doingrow6)
+    print(doingrow7)
+    print(doingrow8)
+    print(doingrow9)
+    row = int(input('Enter the row: '))
+    column = int(input('Enter the column: '))
+    number = int(input('Enter the number that goes there: '))
+    if row == 1:
+        if column == 1:
+            doingrow1[0] = number
+        if column == 2:
+            doingrow1[1] = number
+        if column == 3:
+            doingrow1[2] = number
+        if column == 4:
+            doingrow1[3] = number
+        if column == 5:
+            doingrow1[4] = number
+        if column == 6:
+            doingrow1[5] = number
+        if column == 7:
+            doingrow1[6] = number
+        if column == 8:
+            doingrow1[7] = number
+        if column == 9:
+            doingrow1[8] = number
+    if row == 2:
+        if column == 1:
+            doingrow2[0] = number
+        if column == 2:
+            doingrow2[1] = number
+        if column == 3:
+            doingrow2[2] = number
+        if column == 4:
+            doingrow2[3] = number
+        if column == 5:
+            doingrow2[4] = number
+        if column == 6:
+            doingrow2[5] = number
+        if column == 7:
+            doingrow2[6] = number
+        if column == 8:
+            doingrow2[7] = number
+        if column == 9:
+            doingrow2[8] = number
+    if row == 3:
+        if column == 1:
+            doingrow3[0] = number
+        if column == 2:
+            doingrow3[1] = number
+        if column == 3:
+            doingrow3[2] = number
+        if column == 4:
+            doingrow3[3] = number
+        if column == 5:
+            doingrow3[4] = number
+        if column == 6:
+            doingrow3[5] = number
+        if column == 7:
+            doingrow3[6] = number
+        if column == 8:
+            doingrow3[7] = number
+        if column == 9:
+            doingrow3[8] = number
+    if row == 4:
+        if column == 1:
+            doingrow4[0] = number
+        if column == 2:
+            doingrow4[1] = number
+        if column == 3:
+            doingrow4[2] = number
+        if column == 4:
+            doingrow4[3] = number
+        if column == 5:
+            doingrow4[4] = number
+        if column == 6:
+            doingrow4[5] = number
+        if column == 7:
+            doingrow4[6] = number
+        if column == 8:
+            doingrow4[7] = number
+        if column == 9:
+            doingrow4[8] = number
+    if row == 5:
+        if column == 1:
+            doingrow5[0] = number
+        if column == 2:
+            doingrow5[1] = number
+        if column == 3:
+            doingrow5[2] = number
+        if column == 4:
+            doingrow5[3] = number
+        if column == 5:
+            doingrow5[4] = number
+        if column == 6:
+            doingrow5[5] = number
+        if column == 7:
+            doingrow5[6] = number
+        if column == 8:
+            doingrow5[7] = number
+        if column == 9:
+            doingrow5[8] = number
+    if row == 6:
+        if column == 1:
+            doingrow6[0] = number
+        if column == 2:
+            doingrow6[1] = number
+        if column == 3:
+            doingrow6[2] = number
+        if column == 4:
+            doingrow6[3] = number
+        if column == 5:
+            doingrow6[4] = number
+        if column == 6:
+            doingrow6[5] = number
+        if column == 7:
+            doingrow6[6] = number
+        if column == 8:
+            doingrow6[7] = number
+        if column == 9:
+            doingrow6[8] = number
+    if row == 7:
+        if column == 1:
+            doingrow7[0] = number
+        if column == 2:
+            doingrow7[1] = number
+        if column == 3:
+            doingrow7[2] = number
+        if column == 4:
+            doingrow7[3] = number
+        if column == 5:
+            doingrow7[4] = number
+        if column == 6:
+            doingrow7[5] = number
+        if column == 7:
+            doingrow7[6] = number
+        if column == 8:
+            doingrow7[7] = number
+        if column == 9:
+            doingrow7[8] = number
+    if row == 8:
+        if column == 1:
+            doingrow8[0] = number
+        if column == 2:
+            doingrow8[1] = number
+        if column == 3:
+            doingrow8[2] = number
+        if column == 4:
+            doingrow8[3] = number
+        if column == 5:
+            doingrow8[4] = number
+        if column == 6:
+            doingrow8[5] = number
+        if column == 7:
+            doingrow8[6] = number
+        if column == 8:
+            doingrow8[7] = number
+        if column == 9:
+            doingrow8[8] = number
+    if row == 9:
+        if column == 1:
+            doingrow9[0] = number
+        if column == 2:
+            doingrow9[1] = number
+        if column == 3:
+            doingrow9[2] = number
+        if column == 4:
+            doingrow9[3] = number
+        if column == 5:
+            doingrow9[4] = number
+        if column == 6:
+            doingrow9[5] = number
+        if column == 7:
+            doingrow9[6] = number
+        if column == 8:
+            doingrow9[7] = number
+        if column == 9:
+            doingrow9[8] = number
+    if doingrow1[0] == solutionrow1[0]:
+        if doingrow1[1] == solutionrow1[1]:
+            if doingrow1[2] == solutionrow1[2]:
+                if doingrow1[3] == solutionrow1[3]:
+                    if doingrow1[4] == solutionrow1[4]:
+                        if doingrow1[5] == solutionrow1[5]:
+                            if doingrow1[6] == solutionrow1[6]:
+                                if doingrow1[7] == solutionrow1[7]:
+                                    if doingrow1[8] == solutionrow1[8]:
+                                        if doingrow2[0] == solutionrow2[0]:
+                                            if doingrow2[1] == solutionrow2[1]:
+                                                if doingrow2[2] == solutionrow2[2]:
+                                                    if doingrow2[3] == solutionrow2[3]:
+                                                        if doingrow2[4] == solutionrow2[4]:
+                                                            if doingrow2[5] == solutionrow2[5]:
+                                                                if doingrow2[6] == solutionrow2[6]:
+                                                                    if doingrow2[7] == solutionrow2[7]:
+                                                                        if doingrow2[8] == solutionrow2[8]:
+                                                                            if doingrow3[0] == solutionrow3[0]:
+                                                                                if doingrow3[1] == solutionrow3[1]:
+                                                                                    if doingrow3[2] == solutionrow3[2]:
+                                                                                        if doingrow3[3] == solutionrow3[3]:
+                                                                                            if doingrow3[4] == solutionrow3[4]:
+                                                                                                if doingrow3[5] == solutionrow3[5]:
+                                                                                                    if doingrow3[6] == solutionrow3[6]:
+                                                                                                        if doingrow3[7] == solutionrow3[7]:
+                                                                                                            if doingrow3[8] == solutionrow3[8]:
+                                                                                                                if doingrow4[0] == solutionrow4[0]:
+                                                                                                                    if doingrow4[1] == solutionrow4[1]:
+                                                                                                                        if doingrow4[2] == solutionrow4[2]:
+                                                                                                                            if doingrow4[3] == solutionrow4[3]:
+                                                                                                                                if doingrow4[4] == solutionrow4[4]:
+                                                                                                                                    if doingrow4[5] == solutionrow4[5]:
+                                                                                                                                        if doingrow4[6] == solutionrow4[6]:
+                                                                                                                                            if doingrow4[7] == solutionrow4[7]:
+                                                                                                                                                if doingrow4[8] == solutionrow4[8]:
+                                                                                                                                                    if doingrow5[0] == solutionrow5[0]:
+                                                                                                                                                        if doingrow5[1] == solutionrow5[1]:
+                                                                                                                                                            if doingrow5[2] == solutionrow5[2]:
+                                                                                                                                                                if doingrow5[3] == solutionrow5[3]:
+                                                                                                                                                                    if doingrow5[4] == solutionrow5[4]:
+                                                                                                                                                                        if doingrow5[5] == solutionrow5[5]:
+                                                                                                                                                                            if doingrow5[6] == solutionrow5[6]:
+                                                                                                                                                                                if doingrow5[7] == solutionrow5[7]:
+                                                                                                                                                                                    if doingrow5[8] == solutionrow5[8]:
+                                                                                                                                                                                        if doingrow6[0] == solutionrow6[0]:
+                                                                                                                                                                                            if doingrow6[1] == solutionrow6[1]:
+                                                                                                                                                                                                if doingrow6[2] == solutionrow6[2]:
+                                                                                                                                                                                                    if doingrow6[3] == solutionrow6[3]:
+                                                                                                                                                                                                        if doingrow6[4] == solutionrow6[4]:
+                                                                                                                                                                                                            if doingrow6[5] == solutionrow6[5]:
+                                                                                                                                                                                                                if doingrow6[6] == solutionrow6[6]:
+                                                                                                                                                                                                                    if doingrow6[7] == solutionrow6[7]:
+                                                                                                                                                                                                                        if doingrow6[8] == solutionrow6[8]:
+                                                                                                                                                                                                                            if doingrow7[0] == solutionrow7[0]:
+                                                                                                                                                                                                                                if doingrow7[1] == solutionrow7[1]:
+                                                                                                                                                                                                                                    if doingrow7[2] == solutionrow7[2]:
+                                                                                                                                                                                                                                        if doingrow7[3] == solutionrow7[3]:
+                                                                                                                                                                                                                                            if doingrow7[4] == solutionrow7[4]:
+                                                                                                                                                                                                                                                if doingrow7[5] == solutionrow7[5]:
+                                                                                                                                                                                                                                                    if doingrow7[6] == solutionrow7[6]:
+                                                                                                                                                                                                                                                        if doingrow7[7] == solutionrow7[7]:
+                                                                                                                                                                                                                                                            if doingrow7[7] == solutionrow7[7]:
+                                                                                                                                                                                                                                                                if doingrow8[0] == solutionrow8[0]:
+                                                                                                                                                                                                                                                                    if doingrow8[1] == solutionrow8[1]:
+                                                                                                                                                                                                                                                                        if doingrow8[2] == solutionrow8[2]:
+                                                                                                                                                                                                                                                                            if doingrow8[3] == solutionrow8[3]:
+                                                                                                                                                                                                                                                                                if doingrow8[4] == solutionrow8[4]:
+                                                                                                                                                                                                                                                                                    if doingrow8[5] == solutionrow8[5]:
+                                                                                                                                                                                                                                                                                        if doingrow8[6] == solutionrow8[6]:
+                                                                                                                                                                                                                                                                                            if doingrow8[7] == solutionrow8[7]:
+                                                                                                                                                                                                                                                                                                if doingrow8[8] == solutionrow8[8]:
+                                                                                                                                                                                                                                                                                                    if doingrow9[0] == solutionrow9[0]:
+                                                                                                                                                                                                                                                                                                        if doingrow9[1] == solutionrow9[1]:
+                                                                                                                                                                                                                                                                                                            if doingrow9[2] == solutionrow9[2]:
+                                                                                                                                                                                                                                                                                                                if doingrow9[3] == solutionrow9[3]:
+                                                                                                                                                                                                                                                                                                                    if doingrow9[4] == solutionrow9[4]:
+                                                                                                                                                                                                                                                                                                                        if doingrow9[5] == solutionrow9[5]:
+                                                                                                                                                                                                                                                                                                                            if doingrow9[6] == solutionrow9[6]:
+                                                                                                                                                                                                                                                                                                                                if doingrow9[7] == solutionrow9[7]:
+                                                                                                                                                                                                                                                                                                                                    if doingrow9[8] == solutionrow9[8]:
+                                                                                                                                                                                                                                                                                                                                        print('You won!')
+                                                                                                                                                                                                                                                                                                                                        wins = 1
+                                                        
