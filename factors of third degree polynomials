@@ -1,0 +1,46 @@
+print("For Ax3 + Bx2 + Cx + D: ")
+A = int(input("A is: "))
+B = int(input("B is: "))
+C = int(input("C is: "))
+D = int(input("D is: "))
+K = 0
+X = 1
+done = 0
+def P(x):
+    mono1 = A * (x ** 3)
+    mono2 = B * (x ** 2)
+    mono3 = C * x
+    fullpoly = mono1 + mono2 + mono3 + D
+    return fullpoly
+def absolutevalue(z):
+    if z < 0:
+        z = -z
+    else:
+        z = z
+    print(f"The absolute value of D is {z}")
+    return z
+while done == 0: 
+    difference = D / X 
+    if isinstance(difference, int) is True:
+        Y = P(X)
+        print(f"Y is {Y}" )
+        if Y == 0:
+            print(f"X - {X}")
+            K = K + 1
+        Y = P(-X)
+        print(f"Y is {Y}")
+        if Y == 0:
+            print(f"X + {X}")
+            K = K + 1
+    X = X + 1
+    if X <= absolutevalue(D):
+        done = 0
+        print("X is less than or equal to |D|")
+        print(f"X is {X}")
+    else:
+        done = 1
+        print("X is greater than |D|")
+if K > 0:
+    print("Done!")
+else:
+    print("No Factors (X - N)")

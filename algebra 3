@@ -1,0 +1,78 @@
+problem = int(input("Enter 1 for two equations; enter 2 for three equations: "))
+if problem == 1:
+    print('For the equation y = ax2 + bx + c:')
+    a = int(input('Enter a: '))
+    b = int(input('Enter b: '))
+    c = int(input('Enter c: '))
+    if a == 1:
+        compsquare = (b / 2) * (b / 2)
+        k = compsquare - c  
+        h = b / 2
+    if a != 1:
+        if a == 0:
+            a = int(input('Please choose a number for a that is not zero: '))
+        comsquare = (b / 2) * (b / 2)
+        compsquare = comsquare / a
+        if compsquare >= 0:
+            k = compsquare - c
+        elif compsquare < 0:
+            k = (compsquare - c)
+            h = b / (2 * a)
+    print(f'y - {-k} = {a}(x - {-h})')
+    print(f'The vertex is ({-h}, {-k})')
+    descriminant = (b * b) - (a * c * 4)
+    if descriminant >= 0:
+        xintercepta = (-b + (descriminant ** 1/2)) / (a * 2)
+        xinterceptb = (-b - (descriminant ** 1/2)) / (a * 2)
+        print(f'The x intercepts are ({xintercepta},0) and ({xinterceptb}, 0)')
+    if descriminant < 0:
+        descriminant = -descriminant
+        realpart = (-b / (a * 2))  
+        imag = (descriminant ** (1/2))
+        imaginaryparta = imag / (a * 2)
+        print('There are no real x intercepts.')
+        print(f'The imaginary ones are {realpart} + {imaginaryparta}i and {realpart} - {imaginaryparta}i ')
+    print(f'The y intercept is {c}')    
+elif problem == 2:
+    print('For the system of equations: ')
+    print('ax + by + cz = d')
+    print('ex + fy + gz = h')
+    print('ix + jy + kz = l')
+    a = int(input("Enter a: "))
+    b = int(input("Enter b: "))
+    c = int(input("Enter c: "))
+    d = int(input("Enter d: "))
+    e = int(input("Enter e: "))
+    f = int(input("Enter f: "))
+    g = int(input("Enter g: "))
+    h = int(input("Enter h: "))
+    i = int(input("Enter i: "))
+    j = int(input("Enter j: "))
+    k = int(input("Enter k: "))
+    l = int(input("Enter l: "))
+    ds1 = a * ((f * k) - (g * j))
+    ds2 = b * ((e * k) - (g * i))
+    ds3 = c * ((e * j) - (f * i))
+    denom = ds1 - ds2 + ds3
+    xs1 = d * ((f * k) - (g * j))
+    xs2 = b * ((h * k) - (g * l))
+    xs3 = c * ((h * j) - (f * l))
+    xnum = xs1 - xs2 + xs3
+    ys1 = a * ((h * k) - (g * l))
+    ys2 = d * ((e * k) - (g * i))
+    ys3 = c * ((e * l) - (h * i))
+    ynum = ys1 - ys2 + ys3
+    zs1 = a * ((f * l) - (h * j))
+    zs2 = b * ((e * l) - (h * i))
+    zs3 = d * ((e * j) - (f * i))
+    znum = zs1 - zs2 + zs3
+    if denom != 0:
+        x = xnum / denom
+        y = ynum / denom
+        z = znum / denom
+        print(f"x = {x}, y = {y}, z = {z}!")
+    elif denom == 0:
+        if xnum == 0:
+            print("This set is dependant!")
+        elif xnum != 0:
+            print("This set is inconsistant!")

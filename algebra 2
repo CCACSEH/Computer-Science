@@ -1,0 +1,33 @@
+print('For the equation y = ax2 + bx + c:')
+a = int(input('Enter a: '))
+b = int(input('Enter b: '))
+c = int(input('Enter c: '))
+if a == 1:
+    compsquare = (b / 2) * (b / 2)
+    k = compsquare - c  
+    h = b / 2
+if a != 1:
+    if a == 0:
+        a = int(input('Please choose a number for a that is not zero: '))
+    comsquare = (b / 2) * (b / 2)
+    compsquare = comsquare / a
+    if compsquare >= 0:
+        k = compsquare - c
+    elif compsquare < 0:
+        k = (compsquare - c)
+    h = b / (2 * a)
+print(f'y - {-k} = {a}(x - {-h})')
+print(f'The vertex is ({-h}, {-k})')
+descriminant = (b * b) - (a * c * 4)
+if descriminant >= 0:
+    xintercepta = (-b + (descriminant ** 1/2)) / (a * 2)
+    xinterceptb = (-b - (descriminant ** 1/2)) / (a * 2)
+    print(f'The x intercepts are ({xintercepta},0) and ({xinterceptb}, 0)')
+if descriminant < 0:
+    descriminant = -descriminant
+    realpart = (-b / (a * 2))  
+    imag = (descriminant ** (1/2))
+    imaginaryparta = imag / (a * 2)
+    print('There are no real x intercepts.')
+    print(f'The imaginary ones are {realpart} + {imaginaryparta}i and {realpart} - {imaginaryparta}i ')
+print(f'The y intercept is {c}')
